@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-md: 900px;
+}
+
+@layer components {
+  body {
+    @apply bg-[#381D2A]
+  }
+
+  button {
+    @apply hover:cursor-pointer
+  }
+}
+
