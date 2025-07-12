@@ -33,14 +33,6 @@ export default function AuthPage() {
             <RegisterForm onSwitchToLogin={() => setIsLogin(true)} />
           )}
         </div>
-
-        {/* Дополнительная информация */}
-        <div className="mt-8 text-center text-gray-400 text-sm">
-          <p>Это демо-версия системы авторизации для портфолио</p>
-          <p className="mt-2">
-            Используйте тестовые данные для входа или создайте новый аккаунт
-          </p>
-        </div>
       </div>
     </main>
   )
