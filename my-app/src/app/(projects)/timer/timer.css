@@ -1,0 +1,32 @@
+.timer-container {
+  width: 100%;
+  background-color: rgb(107 114 128);
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border-radius: 1rem; 
+}
+
+@media (min-width: 768px) {
+  .timer-container {
+    width: 400px;
+  }
+}
+
+.button-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.timer-button {
+  background-color: oklch(37.3% .034 259.733);
+  padding-inline: 1rem;
+  padding-block: 0.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: white;
+  font-size: 1rem;
+}

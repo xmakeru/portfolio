@@ -1,32 +1,24 @@
 import React from "react";
 
-function TimeInput({ id, label, value, onChange, onBlur, onKeyDown }) {
+export default function TimeInput({ id, label, value, onChange, onBlur, onKeyDown }) {
   return (
-    <div className="flex items-center gap-2">
-      <label htmlFor={id} className="whitespace-nowrap text-white">
+    <div className="flex-1">
+      <label htmlFor={id} className="block text-sm font-medium text-gray-300 mb-2">
         {label}
       </label>
       <input
         id={id}
-        type="text"
-        inputMode="numeric"
-        pattern="[0-9]*"
-        placeholder="00"
-        autoComplete="off"
-        maxLength={2}
+        type="number"
+        min="0"
+        max="59"
         value={value}
-        onChange={(e) => {
-          const val = e.target.value;
-          if (/^\d{0,2}$/.test(val)) {
-            onChange(val);
-          }
-        }}
+        onChange={(e) => onChange(e.target.value)}
         onBlur={onBlur}
         onKeyDown={onKeyDown}
-        className="w-16 text-center rounded border border-gray-600 bg-gray-700"
+        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center text-lg font-mono"
+        placeholder="00"
+        aria-label={`Введите ${label.toLowerCase()}`}
       />
     </div>
-  );
+  )
 }
-
-export default React.memo(TimeInput);

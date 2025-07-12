@@ -1,4 +1,3 @@
-"use client"
 import { create } from "zustand"
 import {createJSONStorage, persist, devtools} from "zustand/middleware"
 // immer помогает изменять состояние в immer стиле, т.е. не нужно возвращать новый объект, а можно мутировать текущий. Можно использовать просто методы типо push и тд. Надо установить
@@ -8,10 +7,8 @@ export const useTasksStore = create(devtools(
     (set, get) => ({ //set функция для изменения состояния, get - функция для чтения текущего состояния
       //СОСТОЯНИЯ
       tasks: [],
-      activeTask: null,
 
       setTasks: (tasks) => set({ tasks: tasks }),
-      setActiveTask: (task) => set({ activeTask: task }),
 
       addTask: (task) => {
         set((state) => ({
@@ -19,8 +16,14 @@ export const useTasksStore = create(devtools(
         }), false, "addTask") 
       },
 
+      deleteTask: (task) => {
+        set((state) => ({
+          tasks: state.tasks.filter((t) => t.id !== task.id),
+        }));
+      },
+
       clearTasks: () => {
-      set({ tasks: [], activeTask: null }, false, "clearTasks") 
+      set({ tasks: [] }, false, "clearTasks") 
     },
 
       moveTask: (taskId, newStatus) => {
@@ -46,9 +49,7 @@ export const useTasksStore = create(devtools(
       storage: createJSONStorage(() => sessionStorage), // используем sessionStorage для хранения состояния
       }
       ),
-      {
-        store: 'tasksStore'
-      }
+      {store: 'tasksStore'}
     ))
 
 // Пример использования:

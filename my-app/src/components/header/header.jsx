@@ -4,7 +4,8 @@ import AnimatedHeader from "./headerClient"
 export default function Header() {
   return (
     <header
-    className="">
+    className=""
+    aria-label="Навигационное меню">
       <Suspense fallback={null}>
         <AnimatedHeader />
       </Suspense>

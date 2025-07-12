@@ -37,7 +37,7 @@ export default function ReadMe() {
       <button
         ref={buttonRef}
         onClick={() => setOpen(!open)}
-        className="flex justify-center items-center bg-[#FFA552] px-4 py-2 rounded-sm text-black"
+        className="flex justify-center items-center bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 px-4 py-2 rounded-sm text-white"
       >
         READ ME
       </button>
@@ -49,11 +49,13 @@ export default function ReadMe() {
             animate={{ x: 0 }}
             exit={{ x: "65vw" }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed top-[72px] right-0 h-[calc(100vh-72px)] w-[40%] bg-[#FFA552] z-50"
+            className="fixed top-[72px] right-0 h-[calc(100vh-72px)] w-[40%] bg-gradient-to-br from-gray-900 to-black border-l border-white/20 backdrop-blur-sm z-50"
             ref={ref}
           >
-            <div className="p-4 text-white">
-              <p className="whitespace-normal break-words text-black">{content}</p>
+            <div className="p-6 text-white h-full overflow-y-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                <p className="whitespace-normal break-words text-white leading-relaxed">{content}</p>
+              </div>
             </div>
           </motion.div>
         )}

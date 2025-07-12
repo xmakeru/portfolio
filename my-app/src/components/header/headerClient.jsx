@@ -4,6 +4,7 @@ import Link from "next/link"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
+import AuthStatus from "@/components/auth/AuthStatus"
 
 export default function AnimatedHeader() {
   const pathname = usePathname()
@@ -54,18 +55,29 @@ export default function AnimatedHeader() {
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="p-6 bg-gradient-to-r from-amber-600 to-yellow-400 w-4/5 mx-auto my-4 rounded-2xl">
-        <nav>
+        <nav aria-label="Навигация">
           <ul className="flex justify-between items-center">
-              <li>
-                <Link href="https://github.com/xmakeru" target="_blank" rel="noopener noreferrer">
+              <li className="">
+                <Link 
+                  href="https://github.com/xmakeru" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Перейти на GitHub профиль"
+                >
                   GitHub
                 </Link>
               </li>
-              <li>
-                <Link href="https://t.me/xmakeru" target="_blank" rel="noopener noreferrer">
+              <li className="">
+                <Link 
+                  href="https://t.me/xmakeru" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Перейти в Telegram"
+                >
                   Telegram
                 </Link>
               </li>
+              <AuthStatus />
           </ul>
         </nav>
       </div>

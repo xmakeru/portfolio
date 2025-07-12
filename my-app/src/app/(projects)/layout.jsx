@@ -8,9 +8,9 @@ export default function TimerLayout({ children }) {
   const title = pathname.split("/")
   return (
     <div className="">
-      <div className="flex justify-between items-center px-8 py-4 bg-[#BA5624]">
+      <div className="flex justify-between items-center px-8 py-4 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800">
         <BackButton />
-        <h1 className="text-4xl text-black">{title}</h1>
+        <h1 className="text-4xl text-white">{title}</h1>
         <ReadMe />
       </div>
       {children}
