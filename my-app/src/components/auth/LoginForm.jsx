@@ -36,7 +36,7 @@ export default function LoginForm({ onSwitchToRegister }) {
       <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-white mb-2">Вход</h2>
-          <p className="text-gray-300">Добро пожаловать обратно!</p>
+          <p className="text-gray-300">Тестовый</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
