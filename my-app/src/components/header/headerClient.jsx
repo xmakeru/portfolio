@@ -4,7 +4,6 @@ import Link from "next/link"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
-import AuthStatus from "@/components/auth/AuthStatus"
 
 export default function AnimatedHeader() {
   const pathname = usePathname()
@@ -77,7 +76,6 @@ export default function AnimatedHeader() {
                   Telegram
                 </Link>
               </li>
-              <AuthStatus />
           </ul>
         </nav>
       </div>
