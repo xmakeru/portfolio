@@ -136,12 +136,12 @@ export default function UserProfile() {
 
           {/* Кнопки действий */}
           <div className="space-y-3">
-            <button
+            {/* <button
               onClick={() => window.location.href = '/game'}
               className="w-full bg-gradient-to-r from-purple-500 to-pink-600 text-white py-3 px-4 rounded-xl font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-200"
             >
               Играть
-            </button>
+            </button> */}
             
             <button
               onClick={handleLogout}
