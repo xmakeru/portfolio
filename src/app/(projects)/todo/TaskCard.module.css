@@ -1,0 +1,142 @@
+/* Блок card */
+.card {
+  min-height: 150px;
+  padding: 1rem;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  word-break: break-word;
+  cursor: grab;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-out;
+  transform: translateZ(0);
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+/* Модификаторы состояния card */
+.card--active {
+  background-color: #fcd34d;
+  z-index: 50;
+}
+
+.card--active:hover {
+  background-color: #fbbf24;
+  box-shadow: 0 10px 15px rgba(252, 211, 77, 0.25);
+  transform: scale(1.05);
+}
+
+.card--in-progress {
+  background-color: #f9a8d4;
+  z-index: 50;
+}
+
+.card--in-progress:hover {
+  background-color: #f472b6;
+  box-shadow: 0 10px 15px rgba(249, 168, 212, 0.25);
+  transform: scale(1.05);
+}
+
+.card--done {
+  background-color: #86efac;
+  z-index: 50;
+}
+
+.card--done:hover {
+  background-color: #4ade80;
+  box-shadow: 0 10px 15px rgba(34, 197, 94, 0.25);
+  transform: scale(1.05);
+}
+
+.card--default {
+  background-color: #d1d5db;
+  z-index: 50;
+}
+
+.card--default:hover {
+  background-color: #9ca3af;
+  box-shadow: 0 10px 15px rgba(156, 163, 175, 0.25);
+  transform: scale(1.05);
+}
+
+/* Элементы */
+.card__title {
+  word-break: break-word;
+  font-weight: 500;
+  line-height: 1.25rem;
+  transition: color 0.2s;
+}
+
+.card:hover .card__title {
+  color: #1f2937;
+}
+
+.card__status {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Базовый класс для индикатора статуса */
+.card__statusIndicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  transition: all 0.2s;
+}
+
+/* Модификаторы статуса */
+.card__statusIndicator--active {
+  background-color: #ca8a04;
+}
+
+.card__statusIndicator--active:hover {
+  background-color: #b45309;
+}
+
+.card__statusIndicator--in-progress {
+  background-color: #be185d;
+}
+
+.card__statusIndicator--in-progress:hover {
+  background-color: #9d174d;
+}
+
+.card__statusIndicator--done {
+  background-color: #15803d;
+}
+
+.card__statusIndicator--done:hover {
+  background-color: #166534;
+}
+
+.card__statusIndicator--default {
+  background-color: #4b5563;
+}
+
+.card__statusText {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.card__dragIcon {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0;
+  transition: all 0.2s;
+  transform: translateX(0.5rem);
+  color: #4b5563;
+}
+
+.card:hover .card__dragIcon {
+  opacity: 1;
+  transform: translateX(0);
+}

@@ -1,0 +1,73 @@
+/* Блок basket */
+.basket {
+  padding: 2.5rem; /* p-10 */
+  border-radius: 9999px; /* rounded-full */
+  position: fixed;
+  bottom: 2.5rem; /* bottom-10 */
+  right: 2.5rem; /* right-10 */
+  z-index: 10;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  transform: translateZ(0); /* transform-gpu */
+}
+
+/* Модификатор при наведении */
+.basket--hover:hover {
+  transform: scale(1.1);
+  box-shadow: 0 25px 50px rgba(239, 68, 68, 0.5); /* shadow-2xl + red-500/50 */
+}
+
+/* Модификатор состояния "over" */
+.basket--over {
+  background-color: #dc2626; /* bg-red-600 */
+  transform: scale(1.25) rotate(12deg);
+  box-shadow: 0 25px 50px rgba(239, 68, 68, 0.5); /* shadow-2xl + red-500/50 */
+}
+
+.basket--default {
+  background-color: #ef4444; /* bg-red-500 */
+}
+
+.basket--default:hover {
+  background-color: #dc2626; /* hover:bg-red-600 */
+}
+
+/* Элемент спан с иконкой */
+.basket__icon {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.25rem; /* text-xl */
+  display: block;
+  transition: all 0.3s ease-out;
+}
+
+/* Модификаторы иконки */
+.basket__icon--over {
+  transform: scale(1.1) rotate(12deg);
+}
+
+.basket__icon--default {
+  /* Чтобы имитировать group-hover: нужно JS или обрабатывать через родителя при наведении */
+  transition: all 0.3s ease-out;
+}
+
+/* Пульсирующий эффект */
+.basket__pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px; /* rounded-full */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Ключевые кадры для пульса */
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
